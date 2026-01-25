@@ -37,7 +37,7 @@ I’ve identified several key organizational implications:
 ## **File Structure**
 
 * **`python_cleaning_script.py`**: The core automation and data engineering engine.
-* **`NC_Healthcare_Analysis.pbix`**: The final interactive Power BI dashboard.
+* **Power BI visualization.pbix`**: The final interactive Power BI dashboard.
 * **`Consolidated_Data.xlsx`**: The high-integrity dataset ready for business modeling.
 
 ---

@@ -41,3 +41,5 @@ I’ve identified several key statewide implications:
 * **`NC_vs_US_Healthcare_Final_Consolidated.xlsx`**: Clean dataset ready for business modeling.
 
 ---
+
+<img width="1412" height="794" alt="image" src="https://github.com/user-attachments/assets/a50afd69-07ec-4379-9dee-d8090441dc8b" />

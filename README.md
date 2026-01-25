@@ -42,4 +42,5 @@ I’ve identified several key statewide implications:
 
 ---
 
-<img width="1412" height="794" alt="image" src="https://github.com/user-attachments/assets/a50afd69-07ec-4379-9dee-d8090441dc8b" />
+<img width="1528" height="801" alt="image" src="https://github.com/user-attachments/assets/268924b2-c4e8-4cab-a27a-7b755c13c53f" />
+

@@ -1,56 +1,43 @@
----
-
-# CMS Healthcare Efficiency Analysis: NC vs. US Benchmark
+# **CMS Healthcare Efficiency Analysis: NC vs. US Benchmark**
 
 ## **Project Purpose**
 
-Automated the extraction and transformation of multi-sheet CMS Medicare data using Python to benchmark North Carolina’s healthcare outcomes against national averages. This project establishes a high-integrity dataset for identifying cost-efficiency gaps, quality improvement targets, and future visual modeling in Power BI.
+I developed an analytical pipeline to investigate healthcare cost and efficiency disparities between North Carolina and the United States. This project began with the **automated extraction and transformation** of multi-sheet CMS data using **Python** and concluded with the design of an **complete Power BI dashboard**. The goal was to establish a high-integrity dataset to identify cost-efficiency gaps and quality improvement targets.
 
----
+## **Project Highlights**
 
-## **Project Highlights (2021 Data)**
+The following metrics reflect the data processed via Python and modeled using custom measures:
 
-| Metric | United States (Avg) | North Carolina | Variance |
+| Metric | United States (Avg) | North Carolina | Variance (NC vs. US) |
 | --- | --- | --- | --- |
-| **Total Discharges** | 7,361,070 | 230,418 | -- |
-| **Avg. Payment / Discharge** | $15,324 | $14,429 | **-5.8% (Cost Savings)** |
-| **ER Dependency Rate** | 79.33% | 79.49% | **+0.16%** |
-| **Mortality Rate** | 4.71% | 5.04% | **+0.33%** |
-| **Avg. Length of Stay** | 5.51 Days | 5.62 Days | **+0.11 Days** |
-
----
+| **Avg. Payment / Discharge** | **$15,172** | **$14,603** | **-$569 (3.7% Savings)** |
+| **Avg. Length of Stay (LOS)** | **6.35 Days** | **6.58 Days** | **+0.23 Days** |
+| **Mortality Rate %** | **4.45%** | **4.78%** | **+0.33%** |
 
 ## **Strategic Insights**
 
-* **Cost Efficiency:** North Carolina demonstrates measurable cost-effectiveness, spending nearly **6% less per discharge** than the national US average.
-* **Quality Improvement:** The slight positive variance in **Mortality** and **Length of Stay (LOS)** suggests a strategic opportunity for targeted quality improvement initiatives.
-* **Predictive Value:** This dataset provides the baseline for a future predictive model aimed at optimizing LOS without compromising patient outcomes.
+I’ve identified several key organizational implications:
 
----
+* **Cost Efficiency Paradox:** North Carolina demonstrates measurable cost-effectiveness, spending **3.7% less** per discharge than the national average.
+* **Operational Bottleneck:** The **0.23-day higher stay variance** suggests an opportunity for operational optimization within NC facilities to improve patient throughput.
+* **Quality Benchmarking:** The slightly higher **Mortality Rate (4.78%)** relative to the national baseline (4.45%) identifies a strategic target for quality improvement initiatives.
 
-## **Technical Challenges and Solutions**
+## **Technical Execution**
 
-### **1. Structural Data Traps**
+### **1. Data Engineering (Python)**
 
-* **Challenge:** CMS datasets utilize multi-line headers and metadata rows that break standard dataframe imports.
-* **Solution:** Developed a **Discovery Loop** that scans every tab and row to dynamically locate the header anchor ("Area of Residence") regardless of sheet position or index.
+* **Discovery Loop:** Developed a script to scan multi-sheet CMS files and dynamically locate header anchors to handle structural data.
+* **Data Integrity:** Built a **regex-based pipeline** to force numeric conversion, stripping inconsistent currency symbols, commas, and hidden newlines.
 
-### **2. Version Compatibility (Pandas 2.2+)**
+### **2. Analytical Modeling**
 
-* **Challenge:** Addressed the deprecation of `.applymap()` which caused script failures in modern Python environments.
-* **Solution:** Implemented a version-agnostic cleaning function using a conditional attribute check (`hasattr(df, 'map')`) to ensure cross-environment stability.
-
-### **3. Data Normalization & Integrity**
-
-* **Challenge:** Overcame inconsistent string formatting, including hidden newlines (`\n`), currency symbols, and commas that interfere with numeric analysis.
-* **Solution:** Built a **Regex-based cleaning pipeline** to force high-integrity numeric conversion, ensuring the data is "model-ready" for Power BI.
-
----
+* **DAX:** Authored measures like `Payment Variance` and `Stay Variance` using `CALCULATE` and `DIVIDE` to ensure accurate comparisons regardless of region size.
+* **UX:** Designed a high-contrast dashboard allowing stakeholders to view comparisons instantly.
 
 ## **File Structure**
 
-* `python_cleaning_script.py`: The core automation engine.
-* `requirements.txt`: Environment configuration for reproducibility.
-* `NC_vs_US_Healthcare_Final_Consolidated.xlsx`: The final cleaned and modeled dataset.
+* **`python_cleaning_script.py`**: The core automation and data engineering engine.
+* **`NC_Healthcare_Analysis.pbix`**: The final interactive Power BI dashboard.
+* **`Consolidated_Data.xlsx`**: The high-integrity dataset ready for business modeling.
 
 ---

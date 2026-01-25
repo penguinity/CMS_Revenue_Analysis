@@ -2,7 +2,7 @@
 
 ## **Project Purpose**
 
-I developed an analytical pipeline to investigate healthcare cost and efficiency disparities between North Carolina and the United States. This project began with the **automated extraction and transformation** of multi-sheet CMS data using **Python** and concluded with the design of an **complete Power BI dashboard**. The goal was to establish a high-integrity dataset to identify cost-efficiency gaps and quality improvement targets.
+I developed an analytical pipeline to investigate healthcare cost and efficiency disparities between North Carolina and the United States. This project began with the **automated extraction and transformation** of multi-sheet CMS data using **Python** and concluded with the design of a **complete Power BI dashboard**. The goal was to establish a high-integrity dataset to identify cost-efficiency gaps and quality improvement targets.
 
 ## **Project Highlights**
 
@@ -16,7 +16,7 @@ The following metrics reflect the data processed via Python and modeled using cu
 
 ## **Strategic Insights**
 
-I’ve identified several key organizational implications:
+I’ve identified several key statewide implications:
 
 * **Cost Efficiency Paradox:** North Carolina demonstrates measurable cost-effectiveness, spending **3.7% less** per discharge than the national average.
 * **Operational Bottleneck:** The **0.23-day higher stay variance** suggests an opportunity for operational optimization within NC facilities to improve patient throughput.
@@ -32,12 +32,12 @@ I’ve identified several key organizational implications:
 ### **2. Analytical Modeling**
 
 * **DAX:** Authored measures like `Payment Variance` and `Stay Variance` using `CALCULATE` and `DIVIDE` to ensure accurate comparisons regardless of region size.
-* **UX:** Designed a high-contrast dashboard allowing stakeholders to view comparisons instantly.
+* **UX:** Designed a high-contrast dashboard allowing instant visual comparisons of cleaned data.
 
 ## **File Structure**
 
 * **`python_cleaning_script.py`**: The core automation and data engineering engine.
 * **`Power BI visualization.pbix`**: The final interactive Power BI dashboard.
-* **`Consolidated_Data.xlsx`**: The high-integrity dataset ready for business modeling.
+* **`NC_vs_US_Healthcare_Final_Consolidated.xlsx`**: Clean dataset ready for business modeling.
 
 ---
